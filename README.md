@@ -68,7 +68,7 @@ $ conan install .. --build=missing
 Generate build files (`Makefile`, ...):
 
 ```
-$ cmake ...
+$ cmake ..
 ```
 
 Compile the project:
