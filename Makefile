@@ -20,5 +20,9 @@ mrproper: clean	## Stops and removes running containers
 build:	## Builds application and tests executables, with a `4c-project` container
 	docker-compose run --rm 4c-project build
 
+.PHONY: format
+format:	## Formats C++ code using clang-format (with Webkit style, by default)
+	docker-compose run --rm 4c-project format
+
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

@@ -9,6 +9,7 @@ ENV     CXX=clang++
 RUN     apt-get update                                              \
         && apt-get install --yes --quiet --no-install-recommends    \
             clang                                                   \
+            clang-format											\
             cmake                                                   \
             make                                                    \
             python3-pip                                             \
