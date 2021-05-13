@@ -1,9 +1,7 @@
 [requires]
-# boost/1.66.0@conan/stable
-catch2/2.2.2@bincrafters/stable
+catch2/2.13.6
 
 [options]
-# boost:shared=False
 
 [generators]
 cmake
