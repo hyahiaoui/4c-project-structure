@@ -1,6 +1,7 @@
 # 4c-project-structure
 
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![Continuous Integration](https://github.com/hyahiaoui/4c-project-structure/actions/workflows/ci.yml/badge.svg)](https://github.com/hyahiaoui/4c-project-structure/actions/workflows/ci.yml)
 
 ## Summary
 
