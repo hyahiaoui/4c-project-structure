@@ -14,7 +14,8 @@ RUN     apt-get update                                              \
             make                                                    \
             python3-pip                                             \
         && pip install                                              \
-            conan
+            conan													\
+        && rm -rf /var/lib/apt/lists/*
 
 COPY    scripts/entrypoint.sh /entrypoint.sh
 RUN     chmod +x /entrypoint.sh

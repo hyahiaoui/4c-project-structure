@@ -17,8 +17,12 @@ mrproper: clean	## Stops and removes running containers
 	rm -rf build
 
 .PHONY: build
-build:	## Builds application and tests executables, with a `4c-project` container
+build:	## Builds application and tests executables, within a `4c-project` container
 	docker-compose run --rm 4c-project build
+
+.PHONY: test
+test:	## Run application tests, within a `4c-project` container
+	docker-compose run --rm 4c-project test
 
 .PHONY: format
 format:	## Formats C++ code using clang-format (with Webkit style, by default)

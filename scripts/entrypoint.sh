@@ -50,6 +50,17 @@ function app-build
     )
 }
 
+function app-test
+{
+    (
+        cd "${BUILD_DIR}"
+
+        make -j
+
+        ./test/bin/4c-project-structure_test
+    )
+}
+
 function app-format
 {
     local cc_files=$(find $SOURCE_DIRS -name '*.cc' 2>/dev/null)
@@ -63,7 +74,6 @@ function app-format
     fi
 
     clang-format -i \
-        --verbose \
         --style="$FORMAT_STYLE" \
         ${cc_files} \
         ${cpp_files} \
@@ -76,7 +86,8 @@ do
     case "$1" in
         build   | \
         format  | \
-        shell   )
+        shell   | \
+        test    )
             command=$1
             shift
             app-$command "$@"
