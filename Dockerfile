@@ -9,12 +9,12 @@ ENV     CXX=clang++
 RUN     apt-get update                                              \
         && apt-get install --yes --quiet --no-install-recommends    \
             clang                                                   \
-            clang-format											\
+            clang-format                                            \
             cmake                                                   \
             make                                                    \
             python3-pip                                             \
         && pip install                                              \
-            conan													\
+            conan                                                   \
         && rm -rf /var/lib/apt/lists/*
 
 COPY    scripts/entrypoint.sh /entrypoint.sh
