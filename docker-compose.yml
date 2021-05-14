@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  4c-project:
+    build: .
+    volumes:
+      - .:/usr/src/app/
+      - ./scripts/entrypoint.sh:/entrypoint.sh
+      # Avoid re-installing requirements, every time, by using this volume
+      - ./.conan/:/root/.conan/
