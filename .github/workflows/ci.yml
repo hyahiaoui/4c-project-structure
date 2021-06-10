@@ -22,10 +22,10 @@ jobs:
       run:  docker pull ubuntu:21.04
 
     - name: Build development Docker image
-      run:  make docker
+      run:  make dckr-image
 
     - name: Build application and tests executables
-      run:  make build
+      run:  make dckr-build
 
     - name: Run tests
-      run:  make test
+      run:  make dckr-test

@@ -13,7 +13,8 @@ GREEN='\033[0;32m'
 NOCOLOR='\033[0m'
 
 PROGRAM=$(basename "$0")
-BASE_DIR="/usr/src/app"
+PROGRAM_DIR=$(dirname "$0")
+BASE_DIR=$(dirname "$PROGRAM_DIR")
 BUILD_DIR="${BASE_DIR}/build"
 SOURCE_DIRS="app lib test"
 
