@@ -17,10 +17,7 @@ RUN     apt-get update                                              \
             conan                                                   \
         && rm -rf /var/lib/apt/lists/*
 
-COPY    scripts/entrypoint.sh /entrypoint.sh
-RUN     chmod +x /entrypoint.sh
-
 COPY    . /usr/src/app
 WORKDIR /usr/src/app
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/usr/src/app/scripts/entrypoint.sh" ]

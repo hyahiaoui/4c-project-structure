@@ -44,16 +44,20 @@ dckr-format:## Formats C++ code using clang-format (with Webkit style, by defaul
 	docker-compose run --rm 4c-project format
 
 .PHONY: format
-format:## Formats C++ code using clang-format (with Webkit style, by default)
+format:		## Formats C++ code using clang-format (with Webkit style, by default)
 	./scripts/entrypoint.sh format
 
 #######################################
 # Clean-up targets
 #######################################
 .PHONY: dckr-clean
-dckr-clean:	## Stops and removes running Docker containers
-	docker-compose rm --stop --force -v
+dckr-clean:	## Removes building artifacts, within a Docker container
+	docker-compose run --rm 4c-project clean
+
+.PHONY: clean
+clean:		## Removes building artifacts
+	./scripts/entrypoint.sh clean
 
 .PHONY: mrproper
-mrproper: dckr-clean	## Cleans up Docker and build artifacts
+mrproper: clean ## Removes building artifacts and downloaded libraries
 	rm -rf build .conan

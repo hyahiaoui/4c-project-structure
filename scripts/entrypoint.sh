@@ -51,6 +51,11 @@ function app-build
     )
 }
 
+function app-clean
+{
+    rm -rf "${BUILD_DIR}"
+}
+
 function app-test
 {
     (
@@ -86,6 +91,7 @@ while (( $# ))
 do
     case "$1" in
         build   | \
+        clean   | \
         format  | \
         shell   | \
         test    )
